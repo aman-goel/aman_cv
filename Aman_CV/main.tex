@@ -24,6 +24,17 @@
 \usepackage[bottom]{footmisc}
 \usepackage{multicol}
 \usepackage{fontawesome}
+\usepackage{graphicx,calc}
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\newcommand*\inlinegraphics[1]{%
+  \settototalheight\myheight{Xygp}%
+  \settodepth\mydepth{Xygp}%
+  \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
+}
 
 % \usepackage{fixfoot}
 % \DeclareFixedFootnote{\repnote}{ Shaastra is the annual technical festival of IIT Madras}
@@ -101,7 +112,7 @@ right=2in,
 %     India     \hspace{.45\textwidth India}
 
 \section{\mysidestyle Research\\Interests}
-    My research interests include exploring reliability \& security of complex systems, and developing automated reasoning algorithms for ensuring system correctness. I also have a developing interest in data structures \& algorithms, programming languages, machine learning and web systems. My current work focuses on automatic verification of complex systems.
+    My research interests include exploring reliability \& security of complex systems, and developing automated reasoning algorithms for ensuring system correctness. I also have a developing interest in data structures \& algorithms, programming languages, machine learning and web systems. My current work focuses on automatic verification of distributed systems.
     % I get fascinated by problems that integrates my knowledge of Electrical Engineering and algorithm development.
     % % I also get fascinated by techniques that help optimizing time and memory usage by using efficient data structures \& algorithms.%tofill%
 
@@ -135,20 +146,26 @@ right=2in,
     \phantom{xx}\hspace{1ex} -- Uses SMT solvers to perform word-level formal verification \\
     \phantom{xx}\hspace{1ex} -- Uses data abstraction for scaling unbounded property verification \\
     \phantom{xx}\hspace{1ex} -- Won $1^{st}$ place in the prestigious Hardware Model Checking Competition \\ 
-    \phantom{xx}\hspace{3ex} (\href{http://fmv.jku.at/hwmcc20/}{HWMCC}) 2020
+    \phantom{xx}\hspace{3ex} (\href{http://fmv.jku.at/hwmcc20/}{HWMCC}) 2020 -- 7 x \inlinegraphics{figs/gold.png}, 1 x \inlinegraphics{figs/silver.png}, 1 x \inlinegraphics{figs/bronze.png} medals
     % \phantom{xx}\hspace{1ex} -- Won $1^{st}$ place in the BV track and $2^{nd}$ place in the ABV track at the prestigious \\ 
     % \phantom{xx}\hspace{3ex} Hardware Model Checking Competition (\href{http://fmv.jku.at/hwmcc19/}{HWMCC}) 2019
     
-    \hspace{-2em} \href{https://github.com/GLaDOS-Michigan/I4}{\faGithub} \hspace{0.3em}
-    \textbf{Developer of \textit{I4}} \hfill \emph{Aug 2018 - Present}\\
-    \phantom{xx}\hspace{1ex} I4 is a tool for automatic, push-button verification of distributed systems \\
+    \hspace{-2em} \href{https://github.com/aman-goel/ic3po}{\faGithub} \hspace{0.3em}
+    \textbf{Developer of \textit{IC3PO}} \hfill \emph{Nov 2019 - Present}\\
+    \phantom{xx}\hspace{1ex} IC3PO is a tool for automatic, push-button verification of distributed systems \\
     \phantom{xx}\hspace{1ex} -- Performs automated correctness checking and bug-hunting for distributed systems \\
     \phantom{xx}\hspace{1ex} -- Uses formal methods and symmetry to simplify and automate verification tasks \\
-    % \phantom{xx}\hspace{1ex} -- Uses state-of-the-art SMT solvers (\href{https://github.com/Z3Prover/z3}{Z3}, \href{https://github.com/SRI-CSL/yices2}{Yices 2}) to derive proof guarantees or to \\ \phantom{xx}\hspace{3ex} compute counterexample traces
+    \phantom{xx}\hspace{1ex} -- Generates quantified inductive invariants with both universal and existential quantifiers \\
+    
+    % \hspace{-2em} \href{https://github.com/GLaDOS-Michigan/I4}{\faGithub} \hspace{0.3em}
+    % \textbf{Developer of \textit{I4}} \hfill \emph{Aug 2018 - Present}\\
+    % \phantom{xx}\hspace{1ex} I4 is a tool for automatic, push-button verification of distributed systems \\
+    % \phantom{xx}\hspace{1ex} -- Performs automated correctness checking and bug-hunting for distributed systems \\
+    % \phantom{xx}\hspace{1ex} -- Uses formal methods and symmetry to simplify and automate verification tasks \\
+    % % \phantom{xx}\hspace{1ex} -- Uses state-of-the-art SMT solvers (\href{https://github.com/Z3Prover/z3}{Z3}, \href{https://github.com/SRI-CSL/yices2}{Yices 2}) to derive proof guarantees or to \\ \phantom{xx}\hspace{3ex} compute counterexample traces
 
     \textbf{Contributor to Open-source Tools} \hfill \emph{Summer 2020 @ Menlo Park, CA}\\ 
-    \phantom{xx}\hspace{1ex} \href{https://github.com/SRI-CSL/yices2}{Yices 2} \\
-    \phantom{xx}\hspace{1ex} -- A state-of-the-art SMT solver from \href{https://www.sri.com/}{SRI} \\
+    \phantom{xx}\hspace{1ex} \href{https://github.com/SRI-CSL/yices2}{Yices 2} is a state-of-the-art SMT solver from \href{https://www.sri.com/}{SRI} \\
     \phantom{xx}\hspace{1ex} -- Worked with the \href{https://sri-csl.github.io/}{CSL} team and developed techniques for quantified SMT solving
 
     % \textbf{Contributor to Open-source Tools} \hfill \emph{Sep 2016 - Present}\\ 
@@ -156,17 +173,14 @@ right=2in,
     % \phantom{xx}\hspace{1ex} \href{https://github.com/YosysHQ/yosys}{Yosys} - an open-source framework for design synthesis
 
     \textbf{Contributor to Commercial Tools} \hfill \emph{Summer 2019 @ Haifa, Israel}\\ 
-    \phantom{xx}\hspace{1ex} \href{https://www.cadence.com/content/cadence-www/global/en_US/home/tools/system-design-and-verification/formal-and-static-verification/jasper-gold-verification-platform.html}{JasperGold} \\
-    \phantom{xx}\hspace{1ex} -- A state-of-the-art formal verification platform from \href{https://www.cadence.com/}{Cadence} \\
+    \phantom{xx}\hspace{1ex} \href{https://www.cadence.com/content/cadence-www/global/en_US/home/tools/system-design-and-verification/formal-and-static-verification/jasper-gold-verification-platform.html}{JasperGold} is a state-of-the-art formal verification platform from \href{https://www.cadence.com/}{Cadence} \\
     \phantom{xx}\hspace{1ex} -- Developed word-level verification engines for JasperGold \\
     \phantom{xx}\hspace{1ex} -- Worked with Cadence SVG (systems verification group) and developed algorithms for \\
     \phantom{xx}\hspace{3ex} automatically solving hard verification tasks
 
 \section{\mysidestyle Recent\\Service}
     Artifact evaluation committees (AEC) \hfill \emph{2019 - Present}\\
-    \phantom{x} \href{https://popl21.sigplan.org/home/VMCAI-2021}{\textbf{VMCAI'21}}: Conference on Verification, Model Checking, and Abstract Interpretation\\
-    \phantom{x} \href{https://2020.splashcon.org/track/splash-2020-Artifacts}{\textbf{OOPSLA'20}}: Conference on Object-Oriented Programming Systems, Languages, and Apps\\
-    \phantom{x} \href{http://i-cav.org/2020/}{\textbf{CAV'20}}: Conference on Computer-Aided Verification
+    \phantom{x} \href{https://www.usenix.org/conference/osdi21}{\textbf{OSDI 2021}}, \href{https://popl21.sigplan.org/home/VMCAI-2021}{\textbf{VMCAI 2021}}, \href{https://2020.splashcon.org/track/splash-2020-Artifacts}{\textbf{OOPSLA 2020}}, \href{http://i-cav.org/2020/}{\textbf{CAV 2020}}
     
     % \textbf{Incremental Timing Analysis Engine} \hfill  \hfill \emph{Dec 2014 - Mar 2015} \\
     % \phantom{xx}\hspace{1ex} Won International $3^{rd}$ place in \href{https://sites.google.com/site/taucontest2015/}{TAU Contest}, presented at ICCAD 2015.
@@ -183,35 +197,39 @@ right=2in,
 \section{\mysidestyle Selected\\Publications \\ 
 \href{https://scholar.google.com/citations?user=iFCl5vEAAAAJ&hl=en&oi=sra}{\faGraduationCap}}
 
-\hspace{-2em} \href{https://aman-goel.github.io/publications/goel2020avr_submission_version.pdf}{\faFilePdfO} \hspace{0.3em}
+\hspace{-2em} \href{https://aman-goel.github.io/publications/goel2021on_extended_version.pdf}{\faFilePdfO} \hspace{0.3em}
+\textit{On Symmetry and Quantification: A New Approach to Verify Distributed Protocols} \\
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://shemesh.larc.nasa.gov/nfm2021/}{\textit{NFM}}), 2021.}
+
+\hspace{-2em} \href{https://link.springer.com/chapter/10.1007%2F978-3-030-45190-5_23}{\faFilePdfO} \hspace{0.3em}
 \textit{AVR: Abstractly Verifying Reachability} \\
-\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In International Conference on Tools and Algorithms for the Construction and Analysis of Systems (\href{https://www.etaps.org/2020/tacas}{\textit{TACAS}}), 2020 (to appear).}
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In International Conference on Tools and Algorithms for the Construction and Analysis of Systems (\href{https://www.etaps.org/2020/tacas}{\textit{TACAS}}), 2020.}
 
 \hspace{-2em} \href{https://sosp19.rcs.uwaterloo.ca/program.html}{\faFilePdfO} \hspace{0.3em}
 \textit{I4: Incremental Inference of Inductive Invariants for Verification of Distributed Protocols} \\
-\textcolor{lightgray}{Ma, Haojun, \textbf{Aman Goel}, Jean-Baptiste Jeannin, Manos Kapritsos, Baris Kasikci, and Karem A. Sakallah. In Proceedings of the 27th Symposium on Operating Systems Principles (\href{https://sosp19.rcs.uwaterloo.ca/}{\textit{SOSP}}), ACM, 2019.}
+\textcolor{lightgray}{Ma, Haojun, \textbf{Aman Goel}, Jean-Baptiste Jeannin, Manos Kapritsos, Baris Kasikci, and Karem A. Sakallah. In the 27th Symposium on Operating Systems Principles (\href{https://sosp19.rcs.uwaterloo.ca/}{\textit{SOSP}}), 2019.}
 
 \hspace{-2em} \href{https://dl.acm.org/citation.cfm?id=3321451}{\faFilePdfO} \hspace{0.3em}
 \textit{Towards Automatic Inference of Inductive Invariants} \\
-\textcolor{lightgray}{Ma, Haojun, \textbf{Aman Goel}, Jean-Baptiste Jeannin, Manos Kapritsos, Baris Kasikci, and Karem A. Sakallah. In Proceedings of the Workshop on Hot Topics in Operating Systems (\href{https://hotos19.sigops.org/}{\textit{HotOS}}), pp. 30-36. ACM, 2019.}
+\textcolor{lightgray}{Ma, Haojun, \textbf{Aman Goel}, Jean-Baptiste Jeannin, Manos Kapritsos, Baris Kasikci, and Karem A. Sakallah. In the Workshop on Hot Topics in Operating Systems (\href{https://hotos19.sigops.org/}{\textit{HotOS}}), 2019.}
 
 \hspace{-2em} \href{https://link.springer.com/chapter/10.1007/978-3-030-20652-9_11}{\faFilePdfO} \hspace{0.3em}
 \textit{Model checking of Verilog RTL using IC3 with syntax-guided abstraction} \\
-\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://robonaut.jsc.nasa.gov/R2/pages/nfm2019.html}{\textit{NFM}}), pp. 166-185. Springer, Cham, 2019.}
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://robonaut.jsc.nasa.gov/R2/pages/nfm2019.html}{\textit{NFM}}), 2019.}
 
 \hspace{-2em} \href{https://ieeexplore.ieee.org/abstract/document/8715289}{\faFilePdfO} \hspace{0.3em}
 \textit{Empirical evaluation of IC3-based model checking techniques on Verilog RTL designs} \\
-\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In 2019 Design, Automation \& Test in Europe Conference \& Exhibition (\href{https://www.date-conference.com/}{\textit{DATE}}), pp. 618-621. IEEE, 2019.}
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In 2019 Design, Automation \& Test in Europe Conference \& Exhibition (\href{https://www.date-conference.com/}{\textit{DATE}}), 2019.}
 
 \hspace{-2em} \href{https://ieeexplore.ieee.org/abstract/document/7372667}{\faFilePdfO} \hspace{0.3em}
-\textit{iitRACE: A memory efficient engine for fast incremental timing analysis and clock pessimism removal} \\
-\textcolor{lightgray}{Peddawad, Chaitanya, \textbf{Aman Goel}, B. Dheeraj, and Nitin Chandrachoodan. In 2015 IEEE/ACM International Conference on Computer-Aided Design (\href{https://iccad.com/}{\textit{ICCAD}}), pp. 903-909. IEEE, 2015.}
+\textit{iitRACE: A memory efficient engine for fast incremental timing analysis} \\
+\textcolor{lightgray}{Peddawad, Chaitanya, \textbf{Aman Goel}, B. Dheeraj, and Nitin Chandrachoodan. In 2015 IEEE/ACM International Conference on Computer-Aided Design (\href{https://iccad.com/}{\textit{ICCAD}}), 2015.}
 
 \section{\mysidestyle Honors \& \\ Awards}
     \noindent
     \begin{itemize}[leftmargin=*]
     \item[--] Recipient of \href{https://news.engin.umich.edu/2020/03/predoctoral-fellowship-for-mathematically-provable-hardware-design/}{\textbf{Rackham Predoctoral Fellowship}} 2020-21 for outstanding PhD research
-    \item[--] Runner-up finalist of the \href{https://cse.engin.umich.edu/stories/2019-cse-graduate-student-honors-competition-highlights-outstanding-research}{\textbf{CSE Graduate Student Honors Competition}} 2019 for outstanding PhD research for \textit{Push-button Verification using Abstraction and Induction}
+    \item[--] Best student research award in the hardware discipline in the \href{https://cse.engin.umich.edu/stories/2019-cse-graduate-student-honors-competition-highlights-outstanding-research}{\textbf{CSE Graduate Student Honors Competition}} 2019 for outstanding PhD research}
     \item[--] Recipient of Dwight F. Benton fellowship at University of Michigan for 2016-17
     \item[--] Recipient of research travel grant and Israel travel award for 2019
     \item[--] Branch position 2 in Electrical Engineering at IIT Madras (\textit{Silver medalist})
@@ -219,51 +237,53 @@ right=2in,
     \item[--] Recipient of \textit{best undergraduate research project} at Pan IIT Research Expo 2014
     \item[--] Recipient of \textit{Electronics for You} prize for best academic performance at graduate level
     \item[--] Won \textit{National Award} for the Empowerment of Persons with Disabilities 2013 for Solar Charger for Hearing Aid Devices
+    \item[--] Invited participant at Summer School on Formal Techniques 2018 hosted by \href{http://csl.sri.com/}{SRI}
     \end{itemize}
 
 \section{\mysidestyle Selected\\Courses}
-    \vspace{-0.04cm}
-    \textbf{University of Michigan} \\
-    \vspace{-0.7cm}
+    % \vspace{-0.04cm}
+    % \textbf{University of Michigan} \\
+    \vspace{-0.02cm}
         \begin{multicols}{3}
         \begin{itemize}
-        \item[-] \emph{Advanced Algorithms}
-        \item[-] \emph{AI Foundations}
-        \item[-] \emph{Advanced Compilers}
-        \item[-] \emph{Web Systems}
-        \item[-] \emph{Formal Verification}
+        \item[] \emph{Advanced Algorithms}
+        \item[] \emph{AI Foundations}
+        \item[] \emph{Advanced Compilers}
+        \item[] \emph{Data Structures \& Alg.}
+        \item[] \emph{Formal Verification}
+        \item[] \emph{Digital Systems Testing}
         \end{itemize}
         \end{multicols}
     % \phantom{xx}\hspace{4ex} \emph{Advanced Compilers} \phantom{xx}\hspace{4ex} \emph{AI Foundations} \phantom{xx}\hspace{4ex} \emph{Advanced Algorithms} \\     \phantom{xx}\hspace{4ex} \emph{Web Systems}
     % \phantom{xx}\hspace{11ex} \emph{Formal Verification of Hardware \& Software Systems} 
     
-    \vspace{-0.4cm}
-    \textbf{IIT Madras}
-        \vspace{0.15cm} \\
-        \phantom{xx}\hspace{0ex} Computer Science:
-        \vspace{-0.3cm}
-        \begin{multicols}{2}
-        \begin{itemize}
-        \item[-] \emph{Data Structures \& Algorithms}
-        \item[-] \emph{Computational Engineering}
-        % \item[-] \emph{Computer Organisation}
-        \item[-] \emph{Design Verification}
-        \item[-] \emph{Digital Systems Testing}
-        % \item[-] \emph{CAD Systems}
-        \end{itemize}
-        \end{multicols}
+    % \vspace{-0.4cm}
+    % \textbf{IIT Madras}
+    %     \vspace{0.15cm} \\
+    %     \phantom{xx}\hspace{0ex} Computer Science:
+    %     \vspace{-0.3cm}
+    %     \begin{multicols}{2}
+    %     \begin{itemize}
+    %     \item[-] \emph{Data Structures \& Algorithms}
+    %     \item[-] \emph{Computational Engineering}
+    %     % \item[-] \emph{Computer Organisation}
+    %     \item[-] \emph{Design Verification}
+    %     \item[-] \emph{Digital Systems Testing}
+    %     % \item[-] \emph{CAD Systems}
+    %     \end{itemize}
+    %     \end{multicols}
         
-        \vspace{-0.6cm}
-        \phantom{xx}\hspace{0ex} Mathematics \& Operations Research:
-        \vspace{-0.3cm}
-        \begin{multicols}{2}
-        \begin{itemize}
-        \item[-] \emph{Combinatorial Optimization}
-        \item[-] \emph{Fundamentals of Operational Research}
-        \item[-] \emph{Probability Foundations}
-        \item[-] \emph{Decision Modelling}
-        \end{itemize}
-        \end{multicols}
+    %     \vspace{-0.6cm}
+    %     \phantom{xx}\hspace{0ex} Mathematics \& Operations Research:
+    %     \vspace{-0.3cm}
+    %     \begin{multicols}{2}
+    %     \begin{itemize}
+    %     \item[-] \emph{Combinatorial Optimization}
+    %     \item[-] \emph{Fundamentals of Operational Research}
+    %     \item[-] \emph{Probability Foundations}
+    %     \item[-] \emph{Decision Modelling}
+    %     \end{itemize}
+    %     \end{multicols}
 
 \section{\mysidestyle Teaching\\Experience}
     % \textbf{Graduate Student Instructor} \\ 
@@ -276,40 +296,40 @@ right=2in,
     \phantom{xx}\hspace{3ex} EE 5311 Digital IC Design \hfill \emph{Aug - Nov 2015} \\
     \phantom{xx}\hspace{3ex} EE 5332 Mapping Signal Processing Algorithms to DSP Architectures \hfill \emph{Jan - May 2016}
 
-\section{\mysidestyle Former \\ Activities}
-    % \vspace{-0.2cm}
-    \noindent
-    \begin{itemize}[leftmargin=*]
-    \item[--] \textit{Summer School on Formal Techniques} \hfill \emph{Summer 2018 @ Menlo Park, CA} \\
-    Invited participant at Summer School on Formal Techniques 2018 hosted by \href{http://csl.sri.com/}{SRI}
+% \section{\mysidestyle Former \\ Activities}
+%     % \vspace{-0.2cm}
+%     \noindent
+%     \begin{itemize}[leftmargin=*]
+%     \item[--] \textit{Summer School on Formal Techniques} \hfill \emph{Summer 2018 @ Menlo Park, CA} \\
+%     Invited participant at Summer School on Formal Techniques 2018 hosted by \href{http://csl.sri.com/}{SRI}
     
-    \item[--] \textit{MPUC: Compiler for Memristor Arrays} \hfill \emph{Jan - Apr 2017} \\ Developed a compiler for coarse-grained architecture of memristor arrays
+%     \item[--] \textit{MPUC: Compiler for Memristor Arrays} \hfill \emph{Jan - Apr 2017} \\ Developed a compiler for coarse-grained architecture of memristor arrays
     
-    \item[--] \textit{Radiation Pattern Measurement System for Automotive Radar} \hfill \emph{May - July 2014} \\
-    Wireless Connectivity Solutions, \href{http://www.ti.com/}{Texas Instruments}, India \\
-    Developed an automatic radar positioning system for radar modules testing 
+%     \item[--] \textit{Radiation Pattern Measurement System for Automotive Radar} \hfill \emph{May - July 2014} \\
+%     Wireless Connectivity Solutions, \href{http://www.ti.com/}{Texas Instruments}, India \\
+%     Developed an automatic radar positioning system for radar modules testing 
     
-    \item[--] \textit{Voice to Text Converter} \hfill \emph{Mar 2013} \\ Developed software that converts voice input in a language to text field in other chosen language using available softwares of Google Voice Recognition and Google Translate
+%     \item[--] \textit{Voice to Text Converter} \hfill \emph{Mar 2013} \\ Developed software that converts voice input in a language to text field in other chosen language using available softwares of Google Voice Recognition and Google Translate
     
-    % \item[--] \textit{Systolic Arrays in Bluespec} \hfill \emph{Aug - Nov 2015} Designed and analyzed different architectures of matrix-matrix multiplication using systolic arrays using Xilinx ISE
+%     % \item[--] \textit{Systolic Arrays in Bluespec} \hfill \emph{Aug - Nov 2015} Designed and analyzed different architectures of matrix-matrix multiplication using systolic arrays using Xilinx ISE
 
-    % \item[--] \textit{String Matching Problem \& Variants} \hfill \emph{Mar - May 2014} \\ Surveyed the historical Knuth-Morris-Pratt (KMP) algorithm and other similar variants to find all occurrences of a given pattern string in a text
+%     % \item[--] \textit{String Matching Problem \& Variants} \hfill \emph{Mar - May 2014} \\ Surveyed the historical Knuth-Morris-Pratt (KMP) algorithm and other similar variants to find all occurrences of a given pattern string in a text
  
-    % \item[--] \textit{SPICE Circuit Simulator} \hfill \emph{Aug - Nov 2012} \\ Developed a circuit solver in C similar to SPICE for solving linear circuits
+%     % \item[--] \textit{SPICE Circuit Simulator} \hfill \emph{Aug - Nov 2012} \\ Developed a circuit solver in C similar to SPICE for solving linear circuits
 
-    \end{itemize}
+%     \end{itemize}
 
-\section{\mysidestyle Others}
-    \noindent
-    \begin{itemize}[leftmargin=*]
-    \item[--] \textit{U-M Mentorship program} \hfill \emph{2016 - Present}\\
-    Encourage and guide undergraduate students towards CS major, programming and \\ graduate studies
-    \item[--] Voluntary blood donor
-    \end{itemize}
+% \section{\mysidestyle Others}
+%     \noindent
+%     \begin{itemize}[leftmargin=*]
+%     \item[--] \textit{U-M Mentorship program} \hfill \emph{2016 - Present}\\
+%     Encourage and guide undergraduate students towards CS major, programming and \\ graduate studies
+%     \item[--] Voluntary blood donor
+%     \end{itemize}
     
 % \pagebreak
 \section{\mysidestyle Hobbies}
-    Swimming, Water Polo, Skating (ice \& roller), Soccer
+    Swimming, Water Polo, Skating, Badminton, Soccer
 
 \end{resume}
 \end{document} 
