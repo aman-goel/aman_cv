@@ -8,7 +8,7 @@
 %________________________________________________________________________________________
 \let\nofiles\relax
 
-\documentclass[margin,line,letter]{resume}
+\documentclass[line,margin,letter]{resume}
 
 \fontfamily{SansSerif}
 \selectfont
@@ -20,7 +20,7 @@
 \usepackage{enumitem}
 \usepackage{lipsum}
 \usepackage{hologo}
-\usepackage[margin=1cm]{geometry}
+\usepackage[letterpaper]{geometry}
 \usepackage[bottom]{footmisc}
 \usepackage{multicol}
 \usepackage{fontawesome}
@@ -56,7 +56,7 @@ linkcolor=blue(munsell),urlcolor=blue(munsell),
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{lastpage}
-\cfoot[]{\hspace{-10em} \textcolor{lightgray}{Aman Goel}}
+\cfoot[]{\hspace{-5em} \textcolor{lightgray}{Aman Goel}}
 \rfoot{\textcolor{lightgray}{\thepage\ / \pageref*{LastPage}}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -70,10 +70,9 @@ linkcolor=blue(munsell),urlcolor=blue(munsell),
 
 \begin{document}\thispagestyle{empty}
 \newgeometry{
-% a4paper,
-top=0.75in,
-bottom=0.75in,
-left=0.75in,
+top=0.6in,
+bottom=0.5in,
+left=0.5in,
 right=2in,
 % margin=2in,               % 1 inch margins
 }
@@ -112,7 +111,7 @@ right=2in,
 %     India     \hspace{.45\textwidth India}
 
 \section{\mysidestyle Research\\Interests}
-    My research interests include exploring reliability \& security of complex systems, and developing automated reasoning algorithms for ensuring system correctness. I also have a developing interest in data structures \& algorithms, programming languages, machine learning and web systems. My current work focuses on automatic verification of distributed systems.
+    My research interests include exploring the reliability \& security of complex hardware and software systems and developing automated reasoning algorithms for ensuring system correctness. I also have a developing interest in blockchains, smart contracts verification, machine learning, and web systems. My recent work focuses on the automatic verification of distributed systems.
     % I get fascinated by problems that integrates my knowledge of Electrical Engineering and algorithm development.
     % % I also get fascinated by techniques that help optimizing time and memory usage by using efficient data structures \& algorithms.%tofill%
 
@@ -142,11 +141,11 @@ right=2in,
     \hspace{-2em} \href{https://github.com/aman-goel/avr}{\faGithub} \hspace{0.3em}
     \textbf{Developer of AVR} \hfill \emph{Sep 2016 - Present}\\
     \phantom{xx}\hspace{1ex} AVR is a tool for automatic verification of state-transition systems \\
-    \phantom{xx}\hspace{1ex} -- Successfully applied on hardware and software systems \\
-    \phantom{xx}\hspace{1ex} -- Uses SMT solvers to perform word-level formal verification \\
+    \phantom{xx}\hspace{1ex} -- Successfully applied on several hardware systems, such as RISC-V cores \\
+    \phantom{xx}\hspace{1ex} -- Uses SMT solvers (\href{https://github.com/Z3Prover/z3}{Z3}, \href{https://github.com/SRI-CSL/yices2}{Yices}, \href{https://github.com/Boolector/boolector}{Boolector}) to perform word-level formal verification \\
     \phantom{xx}\hspace{1ex} -- Uses data abstraction for scaling unbounded property verification \\
-    \phantom{xx}\hspace{1ex} -- Won $1^{st}$ place in the prestigious Hardware Model Checking Competition \\ 
-    \phantom{xx}\hspace{3ex} (\href{http://fmv.jku.at/hwmcc20/}{HWMCC}) 2020 -- 7 x \inlinegraphics{figs/gold.png}, 1 x \inlinegraphics{figs/silver.png}, 1 x \inlinegraphics{figs/bronze.png} medals
+    \phantom{xx}\hspace{1ex} -- Won $1^{st}$ place in the prestigious Hardware Model Checking Competition (\href{http://fmv.jku.at/hwmcc20/}{HWMCC}) 2020 \\ 
+    \phantom{xx}\hspace{3ex} with 7 x \inlinegraphics{figs/gold.png}, 1 x \inlinegraphics{figs/silver.png}, 1 x \inlinegraphics{figs/bronze.png} medals
     % \phantom{xx}\hspace{1ex} -- Won $1^{st}$ place in the BV track and $2^{nd}$ place in the ABV track at the prestigious \\ 
     % \phantom{xx}\hspace{3ex} Hardware Model Checking Competition (\href{http://fmv.jku.at/hwmcc19/}{HWMCC}) 2019
     
@@ -154,8 +153,8 @@ right=2in,
     \textbf{Developer of IC3PO} \hfill \emph{Nov 2019 - Present}\\
     \phantom{xx}\hspace{1ex} IC3PO is a tool for automatic, push-button verification of distributed systems \\
     \phantom{xx}\hspace{1ex} -- Performs automated correctness checking and bug-hunting for distributed systems \\
-    \phantom{xx}\hspace{1ex} -- Uses formal methods and symmetry to simplify and automate verification tasks \\
-    \phantom{xx}\hspace{1ex} -- Generates quantified inductive invariants with both universal and existential quantifiers \\
+    \phantom{xx}\hspace{1ex} -- Uses formal methods and problem structure to simplify and automate verification tasks \\
+    \phantom{xx}\hspace{1ex} -- Generates quantified inductive invariants with both universal and existential quantifiers
     
     % \hspace{-2em} \href{https://github.com/GLaDOS-Michigan/I4}{\faGithub} \hspace{0.3em}
     % \textbf{Developer of \textit{I4}} \hfill \emph{Aug 2018 - Present}\\
@@ -166,7 +165,8 @@ right=2in,
 
     \textbf{Contributor to Yices}~ with \href{http://www.csl.sri.com/people/bruno/}{Bruno Dutertre} \hfill \emph{Summer 2020 @ Menlo Park, CA}\\ 
     \phantom{xx}\hspace{1ex} \href{https://github.com/SRI-CSL/yices2}{Yices 2} is a state-of-the-art SMT solver from \href{https://www.sri.com/}{SRI} \\
-    \phantom{xx}\hspace{1ex} -- Worked with the \href{https://sri-csl.github.io/}{CSL} team and developed techniques for quantified SMT solving
+    \phantom{xx}\hspace{1ex} -- Worked with the \href{https://sri-csl.github.io/}{CSL} team and developed techniques for quantified SMT solving \\
+    \phantom{xx}\hspace{1ex} -- Developed MBQI and E-matching techniques with a flavor of \textit{reinforcement learning}
 
     % \textbf{Contributor to Open-source Tools} \hfill \emph{Sep 2016 - Present}\\ 
     % \phantom{xx}\hspace{1ex} \href{https://github.com/SRI-CSL/yices2}{Yices 2} - a state-of-the-art SMT solver \\
@@ -190,20 +190,32 @@ right=2in,
 
 
 \section{\mysidestyle Skills}
-    Good knowledge of \emph{C$++$, C, Python, Verilog, Shell scripting} \\
+    Good knowledge of \emph{Python, C$++$, C, Verilog, Shell scripting} \\
     Working knowledge of \emph{MATLAB, Java, HTML, LLVM}  \\
     Good understanding of \emph{SAT / SMT solvers}
 
 \section{\mysidestyle Selected\\Publications \\ 
 \href{https://scholar.google.com/citations?user=iFCl5vEAAAAJ&hl=en&oi=sra}{\faGraduationCap}}
 
-\hspace{-2em} \href{https://aman-goel.github.io/publications/goel2021on_extended_version.pdf}{\faFilePdfO} \hspace{0.3em}
+% \hspace{-2em} \hspace{0.3em}
+% \textit{Towards an Automatic Inductive Proof for Paxos} \\
+% \textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. [in preparation]}
+
+
+\hspace{-2em} (in review) \hspace{0.3em}
+\textit{Towards an Automatic Proof of Lamport's Paxos} \hspace{0.3em} \textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah.}
+
+\hspace{-3.8em} \href{https://youtu.be/e0pr3P2BrEU}{\faYoutubePlay} \hspace{0.1em} \href{https://link.springer.com/chapter/10.1007/978-3-030-76384-8_9}{\faFilePdfO} \hspace{0.3em}
 \textit{On Symmetry and Quantification: A New Approach to Verify Distributed Protocols} \\
 \textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://shemesh.larc.nasa.gov/nfm2021/}{\textit{NFM}}), 2021.}
 
 \hspace{-2em} \href{https://link.springer.com/chapter/10.1007%2F978-3-030-45190-5_23}{\faFilePdfO} \hspace{0.3em}
 \textit{AVR: Abstractly Verifying Reachability} \\
 \textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In International Conference on Tools and Algorithms for the Construction and Analysis of Systems (\href{https://www.etaps.org/2020/tacas}{\textit{TACAS}}), 2020.}
+
+\hspace{-2em} \href{https://link.springer.com/chapter/10.1007/978-3-030-20652-9_11}{\faFilePdfO} \hspace{0.3em}
+\textit{Model checking of Verilog RTL using IC3 with syntax-guided abstraction} \\
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://robonaut.jsc.nasa.gov/R2/pages/nfm2019.html}{\textit{NFM}}), 2019.}
 
 \hspace{-2em} \href{https://sosp19.rcs.uwaterloo.ca/program.html}{\faFilePdfO} \hspace{0.3em}
 \textit{I4: Incremental Inference of Inductive Invariants for Verification of Distributed Protocols} \\
@@ -213,13 +225,9 @@ right=2in,
 \textit{Towards Automatic Inference of Inductive Invariants} \\
 \textcolor{lightgray}{Ma, Haojun, \textbf{Aman Goel}, Jean-Baptiste Jeannin, Manos Kapritsos, Baris Kasikci, and Karem A. Sakallah. In the Workshop on Hot Topics in Operating Systems (\href{https://hotos19.sigops.org/}{\textit{HotOS}}), 2019.}
 
-\hspace{-2em} \href{https://link.springer.com/chapter/10.1007/978-3-030-20652-9_11}{\faFilePdfO} \hspace{0.3em}
-\textit{Model checking of Verilog RTL using IC3 with syntax-guided abstraction} \\
-\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In NASA Formal Methods Symposium (\href{https://robonaut.jsc.nasa.gov/R2/pages/nfm2019.html}{\textit{NFM}}), 2019.}
-
 \hspace{-2em} \href{https://ieeexplore.ieee.org/abstract/document/8715289}{\faFilePdfO} \hspace{0.3em}
 \textit{Empirical evaluation of IC3-based model checking techniques on Verilog RTL designs} \\
-\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In 2019 Design, Automation \& Test in Europe Conference \& Exhibition (\href{https://www.date-conference.com/}{\textit{DATE}}), 2019.}
+\textcolor{lightgray}{\textbf{Aman Goel}, and Karem Sakallah. In 2019 Design, Automation \& Test in Europe (\href{https://www.date-conference.com/}{\textit{DATE}}), 2019.}
 
 \hspace{-2em} \href{https://ieeexplore.ieee.org/abstract/document/7372667}{\faFilePdfO} \hspace{0.3em}
 \textit{iitRACE: A memory efficient engine for fast incremental timing analysis} \\
@@ -236,9 +244,20 @@ right=2in,
     \item[--] Won international $3^{rd}$ place in TAU Contest at \href{https://iccad.com/}{ICCAD} 2015 for Incremental Timing Analysis
     \item[--] Recipient of \textit{best undergraduate research project} at Pan IIT Research Expo 2014
     \item[--] Recipient of \textit{Electronics for You} prize for best academic performance at graduate level
-    \item[--] Won \textit{National Award} for the Empowerment of Persons with Disabilities 2013 for Solar Charger for Hearing Aid Devices
+    \item[--] Won \textit{National Award} for the Empowerment of Persons with Disabilities 2013
     \item[--] Invited participant at Summer School on Formal Techniques 2018 hosted by \href{http://csl.sri.com/}{SRI}
     \end{itemize}
+
+\section{\mysidestyle Professional \\ Experience}
+    \vspace{-0.02cm}
+        \begin{multicols}{2}
+        \begin{itemize}
+        \item[] \emph{SRI International (Intern- 2020)}
+        \item[] \emph{Cadence Designs Systems  (Intern- 2019)}
+        \item[] \emph{Texas Instruments (Intern- 2014)}
+        \item[] \emph{Flexitron (Intern- 2013)}
+        \end{itemize}
+        \end{multicols}
 
 \section{\mysidestyle Selected\\Courses}
     % \vspace{-0.04cm}
